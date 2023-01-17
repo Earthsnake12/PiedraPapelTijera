@@ -1,39 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://elemento/Elemento.gd" type="Script" id=1]
 [ext_resource path="res://elemento/img/piedra.png" type="Texture" id=2]
 [ext_resource path="res://elemento/img/tijera.png" type="Texture" id=3]
 [ext_resource path="res://elemento/img/papel.png" type="Texture" id=4]
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends Area2D
-
-export var speed = 1 # Para manejar la velocidad desde afuera
-var screen_size #Tomo el tamaño de la pantalla
-var velocity #Para guardar la velocidad
-
-# Es llamado cuando se instancia el objeto
-func _ready():
-	screen_size = get_viewport_rect().size #tomo el tamaño de la ventana
-	
-	#creo el vector velocidad
-	velocity = Vector2(rand_range(0, 1), rand_range(0, 1))
-	velocity = velocity.normalized() * speed
-	
-
-# es llamado en cada frame. Delta es el tiempo pasado entre frame
-func _process(delta):
-		
-	position += velocity * delta
-	if position.x < 0 or position.x >  screen_size.x:
-		velocity.x *= -1
-		position.x += velocity.x * delta
-		
-	if position.y < 0 or position.y >  screen_size.y:
-		velocity.y *= -1
-		position.y += velocity.y * delta
-	
-
-"
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -57,11 +27,11 @@ animations = [ {
 radius = 28.2843
 
 [node name="Elemento" type="Area2D"]
-script = SubResource( 3 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-speed = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
