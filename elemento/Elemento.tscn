@@ -27,11 +27,12 @@ animations = [ {
 radius = 28.2843
 
 [node name="Elemento" type="Area2D"]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+speed = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
@@ -45,3 +46,5 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[connection signal="area_entered" from="." to="." method="_on_Elemento_area_entered"]
