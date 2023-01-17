@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/piedra.png-75ac9bcdf2ee7dccf65771280d767559.stex"
+path="res://.import/papel.png-907dfcf4676ee6fd9404c8e33bf0b988.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://piedra/piedra.png"
-dest_files=[ "res://.import/piedra.png-75ac9bcdf2ee7dccf65771280d767559.stex" ]
+source_file="res://elemento/img/papel.png"
+dest_files=[ "res://.import/papel.png-907dfcf4676ee6fd9404c8e33bf0b988.stex" ]
 
 [params]
 
