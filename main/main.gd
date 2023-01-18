@@ -17,9 +17,8 @@ func _ready():
 			elemento.setTipo("tijera")
 			
 		add_child(elemento)
+		
 	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+

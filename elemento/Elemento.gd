@@ -39,6 +39,8 @@ func getTipo():
 	
 
 func _on_Elemento_area_entered(area):
-		if (tipo == "piedra" and area.getTipo() == "papel") or (tipo == "papel" and area.getTipo() == "tijera") or (tipo == "tijera" and area.getTipo() == "piedra"):
-			queue_free()
+	if ((tipo == "piedra" and area.getTipo() == "papel") 
+	or (tipo == "papel" and area.getTipo() == "tijera") 
+	or (tipo == "tijera" and area.getTipo() == "piedra")):
+		queue_free()
 	
