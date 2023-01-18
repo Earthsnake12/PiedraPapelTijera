@@ -18,7 +18,5 @@ func _ready():
 			
 		add_child(elemento)
 		
-	
-
 
 
