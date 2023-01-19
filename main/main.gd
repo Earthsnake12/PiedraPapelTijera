@@ -18,5 +18,10 @@ func _ready():
 			
 		add_child(elemento)
 		
-
+func _process(delta):
+	print("Piedras: " + str(get_tree().get_nodes_in_group("piedra").size()))
+	print("Papeles: " + str(get_tree().get_nodes_in_group("papel").size()))
+	print("Tijeras: " + str(get_tree().get_nodes_in_group("tijera").size()))
+	print("------------------------------------------")
+	
 
