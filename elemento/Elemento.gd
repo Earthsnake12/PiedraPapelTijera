@@ -32,7 +32,7 @@ func _process(delta):
 	
 	for i in range(1, buscados.size()):
 		if position.distance_to(buscados[i].position) > velocity.length():
-			velocity = position. direction_to(buscados[i].position)
+			velocity = position.direction_to(buscados[i].position)
 		
 	velocity *= speed
 	position += velocity * delta

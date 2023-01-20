@@ -7,14 +7,6 @@ func _ready():
 	$Control_Start/Cantidad.text = "10"
 	pass # Replace with function body.
 
-func _process(delta):
-	$Control_score/Piedras.text = ("Piedras: " + 
-		str(get_tree().get_nodes_in_group("piedra").size() - 1))
-	$Control_score/Papeles.text = ("Papeles: " + 
-		str(get_tree().get_nodes_in_group("papel").size() - 1))
-	$Control_score/Tijeras.text = ("Tijeras: " + 
-		str(get_tree().get_nodes_in_group("tijera").size() - 1))
-
 func start_game():
 	var CANT = $Control_Start/Cantidad.text
 	if CANT.is_valid_integer():
@@ -22,16 +14,22 @@ func start_game():
 		$Control_score/Papeles.text = "Papeles: " + CANT
 		$Control_score/Tijeras.text = "Tijeras: " + CANT
 		
+		$Control_game_over.hide()
 		$Control_score.show()
+		$Control_Start/Error_ingreso.hide()
 		$Control_Start.hide()
 	else:
 		$Control_Start/Error_ingreso.show()
 
 	
-func show_game_over():
-	pass
+func show_game_over(ganador):
+	$Control_score.hide()
+	$Control_game_over/Ganador.text = "WIN " + ganador
+	$Control_game_over.show()
 
 
 func _on_Start_pressed():
 	start_game()
 	emit_signal("start_game")
+
+

@@ -26,7 +26,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=1]
 radius = 28.2843
 
-[node name="Elemento" type="Area2D"]
+[node name="Elemento" type="Area2D" groups=["elementos"]]
 scale = Vector2( 0.3, 0.3 )
 script = ExtResource( 1 )
 __meta__ = {
