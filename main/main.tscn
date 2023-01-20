@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://elemento/Elemento.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/HUD.tscn" type="PackedScene" id=3]
 
 [node name="main" type="Node" groups=["papel", "piedra", "tijera"]]
 script = ExtResource( 1 )
 elemento_scene = ExtResource( 2 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
