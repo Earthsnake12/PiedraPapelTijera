@@ -8,13 +8,9 @@ var tipo
 func _ready():
 	randomize()
 	screen_size = get_viewport_rect().size #tomo el tamaño de la ventana
-	
-	#lo arranco en un punto random de la pantalla
+
 	position = Vector2(rand_range(10, screen_size.x-10), rand_range(10, screen_size.y-10))
-	
-	#creo el vector velocidad
-	#velocity = Vector2(rand_range(0, 1), rand_range(0, 1))
-	#velocity = velocity.normalized() * speed
+
 
 # es llamado en cada frame. Delta es el tiempo pasado entre frame
 func _process(delta):
@@ -32,9 +28,9 @@ func _process(delta):
 	
 	for i in range(1, buscados.size()):
 		if position.distance_to(buscados[i].position) > velocity.length():
-			velocity = position.direction_to(buscados[i].position)
+			velocity = buscados[i].position-position
 		
-	velocity *= speed
+	velocity = velocity.normalized() * speed
 	position += velocity * delta
 	
 

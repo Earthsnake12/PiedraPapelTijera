@@ -22,11 +22,11 @@ func _process(delta):
 		if CANT_PIEDRAS == 0:
 			$HUD.show_game_over("TIJERAS")
 		if CANT_PAPELES == 0:
-			$HUD.show_game_over("PIDRAS")
+			$HUD.show_game_over("PIEDRAS")
 		if CANT_TIJERAS == 0:
 			$HUD.show_game_over("PAPELES")
 			
-		get_tree().call_group("elementos", "queue_free")
+		#get_tree().call_group("elementos", "queue_free")
 		enJuego = false
 
 func _on_HUD_start_game():
