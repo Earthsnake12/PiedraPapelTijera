@@ -30,6 +30,7 @@ func _process(delta):
 		enJuego = false
 
 func _on_HUD_start_game():
+	get_tree().call_group("elementos", "queue_free")
 	var CANT = int($HUD/Control_Start/Cantidad.text)
 		
 	for i in CANT*3:

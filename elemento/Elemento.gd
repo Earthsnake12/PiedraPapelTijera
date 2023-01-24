@@ -15,9 +15,8 @@ func _ready():
 # es llamado en cada frame. Delta es el tiempo pasado entre frame
 func _process(delta):
 	
-	var velocity = Vector2.ZERO
-
 	var buscados
+	
 	if tipo == "piedra":
 		buscados = get_tree().get_nodes_in_group("tijera")
 	elif tipo == "papel":
@@ -25,12 +24,19 @@ func _process(delta):
 	elif tipo == "tijera":
 		buscados = get_tree().get_nodes_in_group("papel")
 		
+
+	var objetivo = Vector2.ZERO
 	
 	for i in range(1, buscados.size()):
-		if position.distance_to(buscados[i].position) > velocity.length():
-			velocity = buscados[i].position-position
 		
-	velocity = velocity.normalized() * speed
+		if i == 1:
+			objetivo = buscados[i].position - position
+			
+		elif objetivo.distance_to(buscados[i].position) < objetivo.length():
+			objetivo = buscados[i].position - position
+
+	var velocity = objetivo.normalized() * speed
+	
 	position += velocity * delta
 	
 
@@ -39,7 +45,7 @@ func setTipo(var eleccion_tipo):
 		remove_from_group(tipo)
 	tipo = eleccion_tipo
 	$AnimatedSprite.animation = tipo
-	add_to_group(eleccion_tipo)
+	add_to_group(tipo)
 	
 
 func _on_Elemento_area_entered(area):

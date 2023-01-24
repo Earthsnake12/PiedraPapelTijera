@@ -28,11 +28,13 @@ func _on_Start_pressed():
 
 func _on_Aumentar_button_down():
 	var CANT = int($Control_Start/Cantidad.text)
-	CANT += 1
-	$Control_Start/Cantidad.text = str(CANT)
+	if CANT < 30:
+		CANT += 1
+		$Control_Start/Cantidad.text = str(CANT)
 
 
 func _on_Disminuir_button_down():
 	var CANT = int($Control_Start/Cantidad.text)
-	CANT -= 1
-	$Control_Start/Cantidad.text = str(CANT)
+	if CANT > 1:
+		CANT -= 1
+		$Control_Start/Cantidad.text = str(CANT)
