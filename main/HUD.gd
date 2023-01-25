@@ -12,7 +12,6 @@ func show_game_over(ganador):
 	$Control_game_over/Ganador.text = "WIN " + ganador
 	$Control_game_over.show()
 
-
 func _on_Start_pressed():
 	var CANT = $Control_Start/Cantidad.text
 	
@@ -38,3 +37,11 @@ func _on_Disminuir_button_down():
 	if CANT > 1:
 		CANT -= 1
 		$Control_Start/Cantidad.text = str(CANT)
+		
+
+
+
+func _on_main_menu_pressed():
+	$Control_game_over.hide()
+	$Control_score.hide()
+	$Control_Start.show()

@@ -141,3 +141,4 @@ align = 1
 [connection signal="button_down" from="Control_Start/Contro-Botones/Disminuir" to="." method="_on_Disminuir_button_down"]
 [connection signal="pressed" from="Control_Start/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="Control_game_over/Restart" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Control_game_over/main_menu" to="." method="_on_main_menu_pressed"]
