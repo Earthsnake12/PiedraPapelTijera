@@ -7,7 +7,6 @@ var enJuego = false
 func _ready():
 	randomize()
 	
-	
 func _process(delta):
 	var CANT_PIEDRAS = get_tree().get_nodes_in_group("piedra").size() - 1
 	var CANT_PAPELES = get_tree().get_nodes_in_group("papel").size() - 1
@@ -26,7 +25,6 @@ func _process(delta):
 		if CANT_TIJERAS == 0:
 			$HUD.show_game_over("PAPELES")
 			
-		#get_tree().call_group("elementos", "queue_free")
 		enJuego = false
 
 func _on_HUD_start_game():
