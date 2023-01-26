@@ -36,12 +36,21 @@ func _on_HUD_start_game():
 		
 		if i < CANT: 
 			elemento.setTipo("piedra")
+			$Control_Piedra.add_child(elemento)
+			elemento.connect("tocado", self, "_on_Elemento_tocado")
 		elif i < CANT * 2: 
 			elemento.setTipo("papel")
+			$Control_Papel.add_child(elemento)
+			elemento.connect("tocado", self, "_on_Elemento_tocado")
 		else: 
 			elemento.setTipo("tijera")
-			
-		add_child(elemento)
+			$Control_Tijera.add_child(elemento)
+			elemento.connect("tocado", self, "_on_Elemento_tocado")
+	
+	connect("tocado", self, "_on_Elemento_tocado") 
 	
 	enJuego = true
 
+
+func _on_Elemento_tocado(elemento):
+	print(elemento.tipo)

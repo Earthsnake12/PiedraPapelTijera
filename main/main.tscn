@@ -4,10 +4,16 @@
 [ext_resource path="res://elemento/Elemento.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/HUD.tscn" type="PackedScene" id=3]
 
-[node name="main" type="Node" groups=["papel", "piedra", "tijera"]]
+[node name="main" type="Node"]
 script = ExtResource( 1 )
 elemento_scene = ExtResource( 2 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="Control_Piedra" type="Node" parent="."]
+
+[node name="Control_Papel" type="Node" parent="."]
+
+[node name="Control_Tijera" type="Node" parent="."]
 
 [connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
