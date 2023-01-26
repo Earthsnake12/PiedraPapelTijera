@@ -2,17 +2,13 @@ extends Area2D
 
 export var speed = 100 # Para manejar la velocidad desde afuera
 signal tocado(elemento)
-var screen_size #Tomo el tamaño de la pantalla
 var tipo
 var velocity
 
 # Es llamado cuando se instancia el objeto
 func _ready():
 	randomize()
-	screen_size = get_viewport_rect().size #tomo el tamaño de la ventana
-
-	position = Vector2(rand_range(10, screen_size.x-10), rand_range(10, screen_size.y-10))
-
+	
 # es llamado en cada frame. Delta es el tiempo pasado entre frame
 func _process(delta):
 

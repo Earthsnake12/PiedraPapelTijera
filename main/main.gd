@@ -1,11 +1,13 @@
 extends Node
 
 export(PackedScene) var elemento_scene
+var screen_size
 var enJuego = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	screen_size = get_viewport().size #tomo el tamaño de la ventana
 	
 func _process(delta):
 	var CANT_PIEDRAS = $Control_Piedra.get_child_count()
@@ -29,10 +31,12 @@ func _process(delta):
 
 func _on_HUD_start_game():
 	get_tree().call_group("elementos", "queue_free")
+	
 	var CANT = int($HUD/Control_Start/Cantidad.text)
 		
 	for i in CANT*3:
 		var elemento = elemento_scene.instance()
+		elemento.position = Vector2(rand_range(10, screen_size.x-10), rand_range(10, screen_size.y-10))
 		
 		if i < CANT: 
 			elemento.setTipo("piedra")
