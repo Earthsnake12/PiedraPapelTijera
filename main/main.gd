@@ -47,28 +47,7 @@ func _on_HUD_start_game():
 		else: 
 			elemento.setTipo("tijera")
 			$Control_Tijera.add_child(elemento)
-			
-		elemento.connect("tocado", self, "_on_Elemento_tocado")
 	
 	enJuego = true
 
-func _on_Elemento_tocado(elemento):
-	var pos = elemento.position
-	var viejoTipo = elemento.tipo
-	elemento.queue_free()
-	
-	var nuevoElemento = elemento_scene.instance()
-	nuevoElemento.position = pos
-	
-	match viejoTipo:
-		"piedra":
-			nuevoElemento.setTipo("papel")
-			$Control_Papel.call_deferred("add_child", nuevoElemento)
-		"papel":
-			nuevoElemento.setTipo("tijera")
-			$Control_Tijera.call_deferred("add_child", nuevoElemento)
-		"tijera":
-			nuevoElemento.setTipo("piedra")
-			$Control_Piedra.call_deferred("add_child", nuevoElemento)
-	
-	nuevoElemento.connect("tocado", self, "_on_Elemento_tocado")
+

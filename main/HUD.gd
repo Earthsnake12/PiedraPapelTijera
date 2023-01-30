@@ -7,7 +7,7 @@ func _ready():
 	$Control_Start/Cantidad.text = "10"
 
 func show_game_over(ganador):
-	$Control_score.hide()
+	#$Control_score.hide()
 	$Control_game_over/Ganador.text = "WIN " + ganador
 	$Control_game_over.show()
 
