@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://main/traducc.es.translation", "res://main/traducc.en.translation" ]
+
+source_file="res://main/traducc.csv"
+dest_files=[ "res://main/traducc.es.translation", "res://main/traducc.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

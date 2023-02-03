@@ -8,15 +8,15 @@ func _ready():
 
 func show_game_over(ganador):
 	#$Control_score.hide()
-	$Control_game_over/Ganador.text = "WIN " + ganador
+	$Control_game_over/Ganador.text = ganador
 	$Control_game_over.show()
 
 func _on_Start_pressed():
 	var CANT = $Control_Start/Cantidad.text
 	
-	$Control_score/Piedras.text = "Piedras: " + CANT
-	$Control_score/Papeles.text = "Papeles: " + CANT
-	$Control_score/Tijeras.text = "Tijeras: " + CANT
+	$Control_score/Piedras.text = tr("PIEDRA_SCORE") + ": " + CANT
+	$Control_score/Papeles.text = tr("PAPEL_SCORE") + ": " + CANT
+	$Control_score/Tijeras.text = tr("TIJERA_SCORE") + ": " + CANT
 		
 	$Control_game_over.hide()
 	$Control_Start.hide()

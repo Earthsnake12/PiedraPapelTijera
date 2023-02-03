@@ -14,18 +14,18 @@ func _process(delta):
 	var CANT_PAPELES = $Control_Papel.get_child_count()
 	var CANT_TIJERAS = $Control_Tijera.get_child_count()
 	
-	$HUD/Control_score/Piedras.text = "Piedras: " + str(CANT_PIEDRAS)
-	$HUD/Control_score/Papeles.text = "Papeles: " + str(CANT_PAPELES)
-	$HUD/Control_score/Tijeras.text = "Tijeras: " + str(CANT_TIJERAS)
+	$HUD/Control_score/Piedras.text = tr("PIEDRA_SCORE") + ": " + str(CANT_PIEDRAS)
+	$HUD/Control_score/Papeles.text = tr("PAPEL_SCORE") + ": " + str(CANT_PAPELES)
+	$HUD/Control_score/Tijeras.text = tr("TIJERA_SCORE") + ": " + str(CANT_TIJERAS)
 	
 	if enJuego and (CANT_PIEDRAS == 0 or CANT_PAPELES == 0 or CANT_TIJERAS == 0):
 		
 		if CANT_PIEDRAS == 0:
-			$HUD.show_game_over("TIJERAS")
+			$HUD.show_game_over(tr("TIJERA_G"))
 		if CANT_PAPELES == 0:
-			$HUD.show_game_over("PIEDRAS")
+			$HUD.show_game_over(tr("PIEDRA_G"))
 		if CANT_TIJERAS == 0:
-			$HUD.show_game_over("PAPELES")
+			$HUD.show_game_over(tr("PAPEL_G"))
 			
 		enJuego = false
 
