@@ -7,6 +7,7 @@ var enJuego = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	TranslationServer.set_locale("es")
 	screen_size = get_viewport().size #tomo el tamaño de la ventana
 	
 func _process(delta):

@@ -1,7 +1,6 @@
 extends Area2D
 
 export var speed = 100 # Para manejar la velocidad desde afuera
-signal tocado(elemento)
 var tipo
 
 # Es llamado cuando se instancia el objeto

@@ -10,9 +10,10 @@ config_version=4
 
 [application]
 
-config/name="PiedraPapelTijera"
+config/name="Piedra Papel Tijeras masiva automática"
 run/main_scene="res://main/main.tscn"
 config/icon="res://icon.png"
+config/name_en="Automatic Massive Rock Paper Scissors"
 
 [display]
 
@@ -33,7 +34,7 @@ common/drop_mouse_on_gui_input_disabled=true
 
 [locale]
 
-test="en"
+fallback="es"
 translations=PoolStringArray( "res://traducc.en.translation", "res://traducc.es.translation" )
 
 [physics]

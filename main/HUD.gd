@@ -20,6 +20,7 @@ func _on_Start_pressed():
 		
 	$Control_game_over.hide()
 	$Control_Start.hide()
+	$Control_BotonTraduc.hide()
 	$Control_score.show()
 
 	emit_signal("start_game")
@@ -40,3 +41,15 @@ func _on_main_menu_pressed():
 	$Control_game_over.hide()
 	$Control_score.hide()
 	$Control_Start.show()
+	$Control_BotonTraduc.show()
+
+
+func _on_Tradu_esp_button_down():
+	$Control_BotonTraduc/Tradu_esp.hide()
+	$Control_BotonTraduc/Tradu_eng.show()
+	TranslationServer.set_locale("en")
+
+func _on_Tradu_eng_button_down():
+	$Control_BotonTraduc/Tradu_eng.hide()
+	$Control_BotonTraduc/Tradu_esp.show()
+	TranslationServer.set_locale("es")
